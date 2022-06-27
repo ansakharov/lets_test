@@ -9,5 +9,5 @@ go run cmd/main.go --conf=conf.yaml
 ```
 
 #### Chapters
-iter0: base api routes with some bugs (not in codebase)
+iter0: base api routes with some bugs (not in codebase) 
 iter1: added some unit tests, fixed bug in GET /orders and decouple pool&repo from usecase
