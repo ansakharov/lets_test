@@ -1,0 +1,2 @@
+port: ":80"
+db_conn_string: "postgres://alesakharov@localhost:5432/postgres"
