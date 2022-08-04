@@ -135,7 +135,10 @@ func (h Handler) Create(ctx context.Context) http.Handler {
 		}
 
 		w.Header().Set("Content-Type", "application/json")
-		json.NewEncoder(w).Encode(`{"success": "ok"}`)
+
+		m := make(map[string]interface{})
+		m["success"] = "ok"
+		json.NewEncoder(w).Encode(m)
 
 	}
 	return http.HandlerFunc(fn)

@@ -163,7 +163,6 @@ func ConnectConfig(ctx context.Context, config *Config) (*Pool, error) {
 		panic("config must be created by ParseConfig")
 	}
 
-	fmt.Println("1")
 	p := &Pool{
 		config:            config,
 		beforeConnect:     config.BeforeConnect,
@@ -176,7 +175,6 @@ func ConnectConfig(ctx context.Context, config *Config) (*Pool, error) {
 		healthCheckPeriod: config.HealthCheckPeriod,
 		closeChan:         make(chan struct{}),
 	}
-	fmt.Println("2")
 	p.p = puddle.NewPool(
 		func(ctx context.Context) (interface{}, error) {
 			connConfig := p.config.ConnConfig
@@ -238,9 +236,7 @@ func ConnectConfig(ctx context.Context, config *Config) (*Pool, error) {
 		}
 		res.Release()
 	}
-	fmt.Println("3")
 	go p.backgroundHealthCheck()
-	fmt.Println("4")
 	return p, nil
 }
 
