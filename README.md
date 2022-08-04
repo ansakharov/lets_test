@@ -5,10 +5,8 @@ It'll become better over iterations.
 ### How to run
 ```
 go run cmd/main.go --conf=conf.yaml
-
 ```
 
 #### Chapters
-- iter0: base api routes with some bugs (not in codebase) 
-
-- iter1: added some unit tests, fixed bug in GET /orders and decouple pool&repo from usecase
+- v0.0.1: added some unit tests, fixed bug in GET /orders and decouple pool&repo from usecase.
+- v0.0.2: added intergration tests for gateway-usecase layers. Also added tests with fakes.

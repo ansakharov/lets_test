@@ -47,7 +47,6 @@ func (uc *Usecase) Get(ctx context.Context, log logrus.FieldLogger, IDs []uint64
 	// count amount and discount for all orders.
 	for idx, singleOrder := range ordersMap {
 		for _, singleService := range singleOrder.Items {
-			// TODO fix here bug hehehe
 			singleOrder.OriginalAmount += singleService.Amount
 			singleOrder.DiscountedAmount += singleService.DiscountedAmount
 			ordersMap[idx] = singleOrder
